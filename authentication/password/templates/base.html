@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            title
+        </title>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    </head>
+    <body>
+    <div class="container">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+            
+            <a class="navbar-brand" href="#">Brand</a>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                  <li class="active"><a href="{% url 'register' %}">register <span class="sr-only">(current)</span></a></li>
+                    {% if user.is_authenticated %}
+                    <li class="navbar-link"><a href = "{% url 'logout' %}">Logout</li>
+                        {% else %}
+                        <li class="navbar-link"><a href = "{% url 'login' %}">Login</a></li>
+                    {% endif %}
+                  </ul>
+            
+            </div>
+            </div>
+        </div>
+    </nav>
+</div>
+{% block body_block %}
+    <!-- type the other than in herited conntent -->
+{% endblock %}
+
+    </body>
+</html>
